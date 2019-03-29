@@ -1,4 +1,4 @@
-module.exports = function (_global) {
+module.exports = function (_global, _process) {
 
     if (!!_global.__LIB__) return; //skrra
 
@@ -8,9 +8,8 @@ module.exports = function (_global) {
 
         _fs: require('fs'),
 
-        argv: process.argv,
-        argl: process.argv.length,
-        parg: process.argv.splice(-1, 2),
+        argv: _process.argv,
+        argl: this.argv.length,
         
         _BUF_: Buffer,
         _INF_: Infinity,
