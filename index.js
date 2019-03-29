@@ -6,22 +6,14 @@ module.exports = function (_global) {
 
         __LIB__: true,
 
-        // default requires
-
         _fs: require('fs'),
-        //Sleep: require('thread-sleep'),
 
         argv: process.argv,
         argl: process.argv.length,
         parg: process.argv.splice(-1, 2),
         
-        // Hmm..
-
         _BUF_: Buffer,
         _INF_: Infinity,
-
-        //loop counter a,b,c,d,e,f
-        // _ca__ || _lca_ ?
 
         _ca_: 0,
         _cb_: 0,
@@ -46,6 +38,11 @@ module.exports = function (_global) {
         sizeof: function () {
 
             return arguments[0].length;
+        },
+
+        test: function(){
+
+            return this;
         }
     };
 
