@@ -9,7 +9,7 @@ module.exports = function (_global, _process) {
         _fs: require('fs'),
 
         argv: _process.argv,
-        argl: this.argv.length,
+        argl: _process.argv.length,
         
         _BUF_: Buffer,
         _INF_: Infinity,
@@ -31,7 +31,7 @@ module.exports = function (_global, _process) {
 
         clc: function () {
 
-            _ca_, _cb_, _cc_, _cd_, _ce_ = 0;
+            _ca_, _cb_, _cc_, _cd_, _ce_;
         },
 
         sizeof: function () {
