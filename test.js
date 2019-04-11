@@ -15,3 +15,5 @@ var bsize = sizeof(buf);
 //buffer and buffer size in object
 
 printo({buffer: buf, bufsize: bsize});
+
+//terefere
