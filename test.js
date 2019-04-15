@@ -1,19 +1,10 @@
 require('./index')(global, process);
 
-//Create new Buffer
+var cnt = 0;
 
-var buf = new _BUF_.from("abcde");
+do {
 
-//print buffer
+    print();
 
-print(buf);
-
-//get size of buffer
-
-var bsize = sizeof(buf);
-
-//buffer and buffer size in object
-
-printo({buffer: buf, bufsize: bsize});
-
-//terefere
+    cnt++;
+}while(cnt < argv[0]);

@@ -49,6 +49,11 @@ module.exports = function (_global, _process) {
         sizeof: function () {
 
             return arguments[0].length;
+        },
+
+        def: function(){
+
+            this[arguments[0]] = arguments[1];
         }
     };
 
