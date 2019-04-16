@@ -1,10 +1,31 @@
 require('./index')(global, process);
 
-var cnt = 0;
+//filesystem is preloaded in library as _fs
+def('fd', _fs.readFileSync('./test.js', 'utf-8'));
 
-do {
+print("test.js file length %s", sizeof(fd));
 
-    print();
+//console.log
+print("Hello World");
 
-    cnt++;
-}while(cnt < argv[0]);
+//console.dir
+printo({foo: 1, bar: this.foo});
+
+//console.table
+printt([1,2,3,4], [1,2,3,4]);
+
+//console.error
+perror("Oops... :/");
+
+//define global var
+def('MaxConnections', 1000);
+
+//define global var with require
+defr('WebSocket', 'ws');
+
+//delay
+setTimeout(function(){
+
+    clear(); //clear console
+
+}, 10000);

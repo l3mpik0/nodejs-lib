@@ -14,10 +14,10 @@ module.exports = function (_global, _process) {
 
         argv: _process.argv,
         argl: _process.argv.length,
-        
+
         _BUF_: Buffer,
         _INF_: Infinity,
-
+        
         //Loop counters
 
         _ca_: 0,
@@ -41,19 +41,32 @@ module.exports = function (_global, _process) {
 
         clc: function () {
 
-           _ca_, _cb_, _cc_, _cd_, _ce_ = 0;
+            _ca_,
+            _cb_,
+            _cc_,
+            _cd_,
+            _ce_ = 0;
         },
 
-        //Return first argument length
+        //Return first argument length Array/String/Object.length ? :)
 
         sizeof: function () {
 
             return arguments[0].length;
         },
 
-        def: function(){
+        def: function () {
 
-            this[arguments[0]] = arguments[1];
+            if (_global[arguments[0]]) print(_global[arguments[0]] + " is now override with value: " + arguments[0]); //throw new Error(arguments[0] + " is already defined!");
+
+            _global[arguments[0]] = arguments[1];
+        },
+
+        defr: function () {
+
+            if (_global[arguments[0]]) throw new Error(arguments[0] + " is already defined!");
+
+            _global[arguments[0]] = require(arguments[1]);
         }
     };
 
